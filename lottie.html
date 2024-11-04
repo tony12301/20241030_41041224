@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="https://i0.wp.com/tw.alphacamp.co/wp-content/uploads/2022/12/60e827295bbd949f8a41a2ec_5d5b7df8da745a6fcc9a7fe1_5b9110e86e11f7d979b0dc36_javascript.png?fit=785%2C340&ssl=1" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+          JS套件範例說明
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="aos.html">AOS動畫</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="text-to-speech.html">文字轉語音</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="lottie.html">Lottie動畫</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="chart.html">chart.js圖表動畫</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="lazy-loading.html">圖片惰性加載</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="anime.html">Anime.js動畫</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="P5.html">P5.js</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="fabric.html">Fabric.js</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="fullcalendar.html">FullCalendar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="lightbox.html">Lightbox2</a>
+            </li>
+          </ul>
+          
+        </div>
+      </div>
+    </nav>
+    <div class="container mt-3">
+        <h1>Lottie 動畫套件</h1>
+        <p>Lottie 是一個強大的動畫套件，可以讓您在網頁中輕鬆播放 After Effects 動畫。訪問 <a href="https://airbnb.io/lottie/" target="_blank">官方網站</a> 了解更多。</p>
+    
+      
+      
+        <div class="row mb-5">
+        <div class="col-md-6">
+          <div class="card" data-aos="fade-right">
+            <div class="card-body">
+              <h5 class="card-title">特色介紹</h5>
+              <ul class="list-unstyled">
+                <li>🎨 支援複雜的向量動畫</li>
+                <li>📱 跨平台支援</li>
+                <li>⚡ 輕量化檔案大小</li>
+                <li>🛠️ 豐富的控制 API</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card" data-aos="fade-left">
+            <div class="card-body">
+              <h5 class="card-title">使用方式</h5>
+              <p>1. 引入 Lottie 函式庫</p>
+              <p>2. 準備 JSON 動畫檔</p>
+              <p>3. 建立容器元素</p>
+              <p>4. 載入並控制動畫</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-5">
+        <h2 class="mb-4">程式碼範例</h2>
+        <div class="card" data-aos="fade-up">
+          <div class="card-body">
+            <pre><code>
+// HTML 部分：建立一個容器來放置動畫
+&lt;div id="lottie-container" style="width: 400px; height: 400px;"&gt;&lt;/div&gt;
+
+// JavaScript 部分：
+// 1. 初始化動畫
+const animation = lottie.loadAnimation({
+  container: document.getElementById('lottie-container'), // 指定容器元素
+  renderer: 'svg',    // 渲染方式，可選 'svg' 或 'canvas'
+  loop: true,        // 是否循環播放
+  autoplay: true,    // 是否自動播放
+  path: 'animation.json'  // 動畫檔案路徑
+});
+
+// 2. 動畫控制方法
+animation.play();      // 開始播放動畫
+animation.pause();     // 暫停在當前幀
+animation.stop();      // 停止並回到第一幀
+animation.setSpeed(2); // 設定播放速度(2倍速)
+
+// 3. 動畫事件監聽
+animation.addEventListener('complete', () => {  // 動畫播放完成時
+  console.log('動畫播放完成');
+});
+
+animation.addEventListener('loopComplete', () => {  // 每次循環完成時
+  console.log('完成一次循環');
+});
+
+// 4. 進階控制
+animation.goToAndPlay(30, true);   // 跳轉到第30幀並播放
+animation.goToAndStop(50, true);   // 跳轉到第50幀並停止
+animation.setDirection(-1);        // 設定播放方向(1正向、-1反向)
+animation.getDuration(true);       // 獲取動畫總時長(秒)
+            </code></pre>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="mb-4 mt-5">互動示範</h2>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">載入中動畫</h5>
+              <div id="loading-animation" style="height: 200px"></div>
+              <div class="mt-3">
+                <button class="btn btn-primary me-2" onclick="playLoadingAnimation()">播放</button>
+                <button class="btn btn-secondary" onclick="pauseLoadingAnimation()">暫停</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">成功動畫</h5>
+              <div id="success-animation" style="height: 200px"></div>
+              <div class="mt-3">
+                <button class="btn btn-primary me-2" onclick="playSuccessAnimation()">播放</button>
+                <button class="btn btn-secondary" onclick="pauseSuccessAnimation()">暫停</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+      
+      // 載入中動畫
+      const loadingAnimation = lottie.loadAnimation({
+        container: document.getElementById('loading-animation'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'https://assets2.lottiefiles.com/packages/lf20_usmfx6bp.json'
+      });
+
+      // 成功動畫
+      const successAnimation = lottie.loadAnimation({
+        container: document.getElementById('success-animation'),
+        renderer: 'svg',
+        loop: true, // 改為自動重複播放
+        autoplay: true, // 改為自動播放
+        path: 'https://assets9.lottiefiles.com/packages/lf20_jbrw3hcz.json'
+      });
+
+      // 控制函數
+      function playLoadingAnimation() {
+        loadingAnimation.play();
+      }
+
+      function pauseLoadingAnimation() {
+        loadingAnimation.pause();
+      }
+
+      function playSuccessAnimation() {
+        successAnimation.play(); // 改為直接播放
+      }
+
+      function pauseSuccessAnimation() {
+        successAnimation.pause();
+      }
+    </script>
+</body>
+<footer class="bg-dark text-light py-4 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h5>聯絡資訊</h5>
+          <p><i class="bi bi-envelope"></i> Email: contact@example.com</p>
+          <p><i class="bi bi-telephone"></i> 電話: (02) 2345-6789</p>
+          <p><i class="bi bi-geo-alt"></i> 地址: 台北市信義區信義路五段7號</p>
+        </div>
+        <div class="col-md-6">
+          <h5>關注我們</h5>
+          <div class="social-links">
+            <a href="#" class="text-light me-3"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-light me-3"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="text-light me-3"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="mt-4">
+      <div class="text-center">
+        <small>&copy; 2024 JS套件範例說明. All rights reserved.</small>
+      </div>
+    </div>
+  </footer>
+</html>

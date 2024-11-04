@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- 加入 AOS CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <!-- 加入 Lightbox2 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="https://i0.wp.com/tw.alphacamp.co/wp-content/uploads/2022/12/60e827295bbd949f8a41a2ec_5d5b7df8da745a6fcc9a7fe1_5b9110e86e11f7d979b0dc36_javascript.png?fit=785%2C340&ssl=1" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+          JS套件範例說明
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="aos.html">AOS動畫</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="text-to-speech.html">文字轉語音</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="lottie.html">Lottie動畫</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="chart.html">chart.js圖表動畫</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="lazy-loading.html">圖片惰性加載</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="anime.html">Anime.js動畫</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="P5.html">P5.js</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="fabric.html">Fabric.js</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="fullcalendar.html">FullCalendar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="lightbox.html">Lightbox2</a>
+            </li>
+          </ul>
+          
+        </div>
+      </div>
+    </nav>
+    <div class="container mt-3">
+      <h1>Lightbox2 圖片展示套件</h1>
+      <p>Lightbox2 是一個輕量級的 JavaScript 圖片展示套件，可以讓網頁中的圖片以燈箱效果展示。訪問 <a href="https://lokeshdhakar.com/projects/lightbox2/" target="_blank">官方網站</a> 了解更多。</p>
+     
+
+      <div class="row mb-5">
+        <div class="col-md-6">
+          <div class="card" data-aos="fade-right">
+            <div class="card-body">
+              <h5 class="card-title">特色介紹</h5>
+              <ul class="list-unstyled">
+                <li>🖼️ 優雅的圖片展示效果</li>
+                <li>⚡ 輕量級且易於使用</li>
+                <li>📱 支援響應式設計</li>
+                <li>🎯 支援圖片群組展示</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card" data-aos="fade-left">
+            <div class="card-body">
+              <h5 class="card-title">使用方式</h5>
+              <p>1. 引入 Lightbox2 CSS 和 JS</p>
+              <p>2. 設定圖片連結和屬性</p>
+              <p>3. 加入 data-lightbox 屬性</p>
+              <p>4. 可選擇性加入圖片說明</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-5">
+        <h2 class="mb-4">程式碼範例</h2>
+        <div class="card" data-aos="fade-up">
+          <div class="card-body">
+            <pre><code>
+// 單張圖片展示
+// href: 指向大圖的路徑
+// data-lightbox: 用於啟動 lightbox 效果，單張圖片可使用唯一值
+// data-title: 顯示在燈箱中的圖片說明文字
+&lt;a href="large-image.jpg" data-lightbox="image-1" data-title="圖片說明"&gt;
+    // src: 縮圖路徑，點擊後會顯示 href 中的大圖
+    // alt: 圖片的替代文字，對無障礙功能很重要
+    &lt;img src="thumbnail.jpg" alt="縮圖"&gt;
+&lt;/a&gt;
+
+// 群組展示 - 多張圖片使用相同的 data-lightbox 值可以組成相冊
+// 使用者可以在燈箱中前後切換瀏覽群組中的圖片
+&lt;a href="image1.jpg" 
+   data-lightbox="gallery"  // 相同的 gallery 值將圖片分組
+   data-title="圖片1"       // 每張圖片可以有獨立的說明文字
+&gt;
+    &lt;img src="thumb1.jpg" alt="第一張圖片縮圖"&gt;
+&lt;/a&gt;
+
+&lt;a href="image2.jpg" 
+   data-lightbox="gallery"  // 使用相同的 gallery 值
+   data-title="圖片2"       // 燈箱展示時會顯示的說明文字
+&gt;
+    &lt;img src="thumb2.jpg" alt="第二張圖片縮圖"&gt;
+&lt;/a&gt;
+            </code></pre>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="mb-4 mt-5">互動示範，可點擊放大
+      </h2>
+      <!-- 相冊展示 -->
+      <h3 class="mb-4">相冊展示</h3>
+      <div class="row">
+        <div class="col-md-3 mb-4">
+          <a href="https://picsum.photos/1200/800?random=3" data-lightbox="gallery" data-title="相冊圖片 1" data-alt="相冊圖片 1">
+            <img src="https://picsum.photos/300/200?random=3" class="img-fluid rounded hover-shadow" alt="相冊圖片 1">
+          </a>
+        </div>
+        <div class="col-md-3 mb-4">
+          <a href="https://picsum.photos/1200/800?random=4" data-lightbox="gallery" data-title="相冊圖片 2" data-alt="相冊圖片 2">
+            <img src="https://picsum.photos/300/200?random=4" class="img-fluid rounded hover-shadow" alt="相冊圖片 2">
+          </a>
+        </div>
+        <div class="col-md-3 mb-4">
+          <a href="https://picsum.photos/1200/800?random=5" data-lightbox="gallery" data-title="相冊圖片 3" data-alt="相冊圖片 3">
+            <img src="https://picsum.photos/300/200?random=5" class="img-fluid rounded hover-shadow" alt="相冊圖片 3">
+          </a>
+        </div>
+        <div class="col-md-3 mb-4">
+          <a href="https://picsum.photos/1200/800?random=6" data-lightbox="gallery" data-title="相冊圖片 4" data-alt="相冊圖片 4">
+            <img src="https://picsum.photos/300/200?random=6" class="img-fluid rounded hover-shadow" alt="相冊圖片 4">
+          </a>
+        </div>
+      </div>
+
+      <!-- 單張圖片展示 -->
+      <h3 class="mb-4">單張圖片展示</h3>
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <a href="https://picsum.photos/1200/800?random=7" 
+             data-lightbox="single" 
+             data-title="高解析度單張圖片展示"
+             data-alt="高解析度圖片">
+            <img src="https://picsum.photos/600/400?random=7" 
+                 class="img-fluid rounded shadow" 
+                 alt="高解析度圖片">
+          </a>
+        </div>
+      </div>
+    </div>
+    <footer class="bg-dark text-light py-4 mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h5>聯絡資訊</h5>
+            <p><i class="bi bi-envelope"></i> Email: contact@example.com</p>
+            <p><i class="bi bi-telephone"></i> 電話: (02) 2345-6789</p>
+            <p><i class="bi bi-geo-alt"></i> 地址: 台北市信義區信義路五段7號</p>
+          </div>
+          <div class="col-md-6">
+            <h5>關注我們</h5>
+            <div class="social-links">
+              <a href="#" class="text-light me-3"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="text-light me-3"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="text-light me-3"><i class="bi bi-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+        <hr class="mt-4">
+        <div class="text-center">
+          <small>&copy; 2024 JS套件範例說明. All rights reserved.</small>
+        </div>
+      </div>
+    </footer>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- 加入 AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- 加入 Lightbox2 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    <script>
+      // 初始化 AOS
+      AOS.init();
+      
+      // Lightbox2 配置
+      lightbox.option({
+        'resizeDuration': 200,
+        'wrapAround': true
+      });
+    </script>
+</body>
+</html>

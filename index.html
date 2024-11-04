@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand active" href="#">
+          <img src="https://i0.wp.com/tw.alphacamp.co/wp-content/uploads/2022/12/60e827295bbd949f8a41a2ec_5d5b7df8da745a6fcc9a7fe1_5b9110e86e11f7d979b0dc36_javascript.png?fit=785%2C340&ssl=1" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+          JS套件範例說明
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="aos.html">AOS動畫</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="text-to-speech.html">文字轉語音</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="lottie.html">Lottie動畫</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="chart.html">chart.js圖表動畫</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="lazy-loading.html">圖片惰性加載</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="anime.html">Anime.js動畫</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="P5.html">P5.js</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="fabric.html">Fabric.js</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="fullcalendar.html">FullCalendar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="lightbox.html">Lightbox2</a>
+            </li>
+          </ul>
+          
+        </div>
+      </div>
+    </nav>
+    <div class="container mt-3">
+      <h1 class="text-center mb-4" data-aos="fade-down">JavaScript 套件寶典</h1>
+      <p class="text-center lead mb-5" data-aos="fade-up">探索強大的 JavaScript 套件世界，讓您的網站更具互動性與視覺吸引力！</p>
+      
+      <div class="row g-4">
+        <!-- 卡片 1：AOS 動畫 -->
+        <div class="col-md-4" data-aos="flip-left" data-aos-delay="100">
+          <div class="card h-100 shadow hover-card border-0 rounded-lg animate-on-hover">
+            <div class="card-body bg-gradient">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-magic fs-1 text-primary me-2 animate-icon pulse"></i>
+                <h5 class="card-title mb-0 fw-bold">AOS 動畫</h5>
+              </div>
+              <p class="card-text text-muted">讓您的網頁元素活靈活現，創造令人驚豔的滾動動畫效果。</p>
+              <a href="aos.html" class="btn btn-outline-primary w-100 rounded-pill slide-right">探索更多 <i class="bi bi-arrow-right-circle-fill"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 卡片 2：文字轉語音 -->
+        <div class="col-md-4" data-aos="flip-up" data-aos-delay="200">
+          <div class="card h-100 shadow hover-card border-0 rounded-lg animate-on-hover">
+            <div class="card-body bg-gradient">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-volume-up fs-1 text-success me-2 animate-icon bounce"></i>
+                <h5 class="card-title mb-0 fw-bold">文字轉語音</h5>
+              </div>
+              <p class="card-text text-muted">將文字轉換成自然流暢的語音，提升網站的無障礙體驗。</p>
+              <a href="text-to-speech.html" class="btn btn-outline-success w-100 rounded-pill slide-right">探索更多 <i class="bi bi-arrow-right-circle-fill"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 卡片 3：Lottie 動畫 -->
+        <div class="col-md-4" data-aos="flip-right" data-aos-delay="300">
+          <div class="card h-100 shadow hover-card border-0 rounded-lg animate-on-hover">
+            <div class="card-body bg-gradient">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-film fs-1 text-danger me-2 animate-icon shake"></i>
+                <h5 class="card-title mb-0 fw-bold">Lottie 動畫</h5>
+              </div>
+              <p class="card-text text-muted">整合 After Effects 動畫，打造專業級的網頁動態效果。</p>
+              <a href="lottie.html" class="btn btn-outline-danger w-100 rounded-pill slide-right">探索更多 <i class="bi bi-arrow-right-circle-fill"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 卡片 4：Chart.js -->
+        <div class="col-md-4" data-aos="zoom-in-up" data-aos-delay="400">
+          <div class="card h-100 shadow hover-card border-0 rounded-lg animate-on-hover">
+            <div class="card-body bg-gradient">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-graph-up fs-1 text-info me-2 animate-icon swing"></i>
+                <h5 class="card-title mb-0 fw-bold">Chart.js 圖表</h5>
+              </div>
+              <p class="card-text text-muted">以動態圖表呈現數據，讓資訊更直觀易懂。</p>
+              <a href="chart.html" class="btn btn-outline-info w-100 rounded-pill slide-right">探索更多 <i class="bi bi-arrow-right-circle-fill"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 卡片 5：圖片惰性加載 -->
+        <div class="col-md-4" data-aos="zoom-in-down" data-aos-delay="500">
+          <div class="card h-100 shadow hover-card border-0 rounded-lg animate-on-hover">
+            <div class="card-body bg-gradient">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-image fs-1 text-warning me-2 animate-icon tada"></i>
+                <h5 class="card-title mb-0 fw-bold">圖片惰性加載</h5>
+              </div>
+              <p class="card-text text-muted">優化網頁載入速度，提供更流暢的瀏覽體驗。</p>
+              <a href="lazy-loading.html" class="btn btn-outline-warning w-100 rounded-pill slide-right">探索更多 <i class="bi bi-arrow-right-circle-fill"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 卡片 6：Anime.js -->
+        <div class="col-md-4" data-aos="zoom-in-left" data-aos-delay="600">
+          <div class="card h-100 shadow hover-card border-0 rounded-lg animate-on-hover">
+            <div class="card-body bg-gradient">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-stars fs-1 text-purple me-2 animate-icon wobble"></i>
+                <h5 class="card-title mb-0 fw-bold">Anime.js 動畫</h5>
+              </div>
+              <p class="card-text text-muted">打造順暢精美的動畫效果，提升使用者互動體驗。</p>
+              <a href="anime.html" class="btn btn-outline-purple w-100 rounded-pill slide-right">探索更多 <i class="bi bi-arrow-right-circle-fill"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 卡片 7：P5.js -->
+        <div class="col-md-4" data-aos="fade-up-right" data-aos-delay="700">
+          <div class="card h-100 shadow hover-card border-0 rounded-lg animate-on-hover">
+            <div class="card-body bg-gradient">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-palette fs-1 text-primary me-2 animate-icon jello"></i>
+                <h5 class="card-title mb-0 fw-bold">P5.js</h5>
+              </div>
+              <p class="card-text text-muted">釋放創意潛能，打造互動式視覺藝術作品。</p>
+              <a href="P5.html" class="btn btn-outline-primary w-100 rounded-pill slide-right">探索更多 <i class="bi bi-arrow-right-circle-fill"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 卡片 8：Fabric.js -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="800">
+          <div class="card h-100 shadow hover-card border-0 rounded-lg animate-on-hover">
+            <div class="card-body bg-gradient">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-brush fs-1 text-success me-2 animate-icon rubberBand"></i>
+                <h5 class="card-title mb-0 fw-bold">Fabric.js</h5>
+              </div>
+              <p class="card-text text-muted">強大的 Canvas 繪圖工具，實現複雜的互動式設計。</p>
+              <a href="fabric.html" class="btn btn-outline-success w-100 rounded-pill slide-right">探索更多 <i class="bi bi-arrow-right-circle-fill"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 卡片 9：FullCalendar -->
+        <div class="col-md-4" data-aos="fade-up-left" data-aos-delay="900">
+          <div class="card h-100 shadow hover-card border-0 rounded-lg animate-on-hover">
+            <div class="card-body bg-gradient">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-calendar-check fs-1 text-danger me-2 animate-icon heartBeat"></i>
+                <h5 class="card-title mb-0 fw-bold">FullCalendar</h5>
+              </div>
+              <p class="card-text text-muted">專業的行事曆管理工具，輕鬆掌握時程安排。</p>
+              <a href="fullcalendar.html" class="btn btn-outline-danger w-100 rounded-pill slide-right">探索更多 <i class="bi bi-arrow-right-circle-fill"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 卡片 10：Lightbox2 -->
+        <div class="col-md-4" data-aos="fade-left" data-aos-delay="1000">
+          <div class="card h-100 shadow hover-card border-0 rounded-lg animate-on-hover">
+            <div class="card-body bg-gradient">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-images fs-1 text-info me-2 animate-icon flip"></i>
+                <h5 class="card-title mb-0 fw-bold">Lightbox2</h5>
+              </div>
+              <p class="card-text text-muted">精美的圖片展示效果，提供絕佳的視覺體驗。</p>
+              <a href="lightbox.html" class="btn btn-outline-info w-100 rounded-pill slide-right">探索更多 <i class="bi bi-arrow-right-circle-fill"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style>
+        .hover-card {
+          transition: transform 0.3s ease;
+        }
+        .hover-card:hover {
+          transform: translateY(-5px);
+        }
+        .text-purple {
+          color: #6f42c1;
+        }
+        .btn-outline-purple {
+          color: #6f42c1;
+          border-color: #6f42c1;
+        }
+        .btn-outline-purple:hover {
+          color: #fff;
+          background-color: #6f42c1;
+          border-color: #6f42c1;
+        }
+      </style>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <footer class="bg-dark text-light py-4 mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h5>聯絡資訊</h5>
+            <p><i class="bi bi-envelope"></i> Email: contact@example.com</p>
+            <p><i class="bi bi-telephone"></i> 電話: (02) 2345-6789</p>
+            <p><i class="bi bi-geo-alt"></i> 地址: 台北市信義區信義路五段7號</p>
+          </div>
+          <div class="col-md-6">
+            <h5>關注我們</h5>
+            <div class="social-links">
+              <a href="#" class="text-light me-3"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="text-light me-3"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="text-light me-3"><i class="bi bi-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+        <hr class="mt-4">
+        <div class="text-center">
+          <small>&copy; 2024 JS套件範例說明. All rights reserved.</small>
+        </div>
+      </div>
+    </footer>
+</html>

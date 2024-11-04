@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="https://i0.wp.com/tw.alphacamp.co/wp-content/uploads/2022/12/60e827295bbd949f8a41a2ec_5d5b7df8da745a6fcc9a7fe1_5b9110e86e11f7d979b0dc36_javascript.png?fit=785%2C340&ssl=1" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+          JS套件範例說明
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="aos.html">AOS動畫</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="text-to-speech.html">文字轉語音</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="lottie.html">Lottie動畫</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="chart.html">chart.js圖表動畫</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="lazy-loading.html">圖片惰性加載</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="anime.html">Anime.js動畫</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="P5.html">P5.js</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="fabric.html">Fabric.js</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="fullcalendar.html">FullCalendar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="lightbox.html">Lightbox2</a>
+            </li>
+          </ul>
+          
+        </div>
+      </div>
+    </nav>
+    <div class="container mt-3">
+      <h1>Anime.js 動畫套件</h1>
+      <p>Anime.js 是一個強大的 JavaScript 動畫庫，可以輕鬆創建複雜的動畫效果。訪問 <a href="https://animejs.com/" target="_blank">官方網站</a> 了解更多。</p>
+
+      <div class="row mb-5">
+        <div class="col-md-6">
+          <div class="card" data-aos="fade-right">
+            <div class="card-body">
+              <h5 class="card-title">特色介紹</h5>
+              <ul class="list-unstyled">
+                <li>✨ 輕量級且高效能</li>
+                <li>🎨 支援 CSS、SVG、DOM 屬性動畫</li>
+                <li>📱 豐富的緩動函數</li>
+                <li>⚡ 時間軸控制功能</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card" data-aos="fade-left">
+            <div class="card-body">
+              <h5 class="card-title">使用方式</h5>
+              <p>1. 引入 Anime.js 函式庫</p>
+              <p>2. 選擇目標元素</p>
+              <p>3. 設定動畫參數</p>
+              <p>4. 執行動畫</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-5">
+        <h2 class="mb-4">程式碼範例</h2>
+        <div class="card" data-aos="fade-up">
+          <div class="card-body">
+            <pre><code>
+// 創建一個新的動畫實例
+anime({
+  // 設定動畫目標元素 (使用 CSS 選擇器)
+  targets: '.element',
+  
+  // 水平移動 250 像素
+  translateX: 250,
+  
+  // 旋轉一圈 (360度)
+  rotate: '1turn',
+  
+  // 動畫持續時間為 800 毫秒
+  duration: 800,
+  
+  // 使用 easeInOutQuad 緩動函數
+  // 開始和結束時較慢,中間較快
+  easing: 'easeInOutQuad'
+});
+            </code></pre>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="mb-4 mt-5">動畫效果展示 (點擊播放)</h2>
+      <div class="demo-container">
+        <div class="p-5 mt-3 bg-primary text-white" id="demo1" style="cursor: pointer">
+          基本位移動畫 (點擊播放)
+        </div>
+        <div class="p-5 mt-3 bg-success text-white" id="demo2" style="cursor: pointer">
+          旋轉動畫 (點擊播放)
+        </div>
+        <div class="p-5 mt-3 bg-info text-white" id="demo3" style="cursor: pointer">
+          縮放動畫 (點擊播放)
+        </div>
+        <div class="p-5 mt-3 bg-warning text-white" id="demo4" style="cursor: pointer">
+          淡入淡出動畫 (點擊播放)
+        </div>
+        <div class="p-5 mt-3 bg-danger text-white" id="demo5" style="cursor: pointer">
+          路徑動畫 (點擊播放)
+        </div>
+        
+      </div>
+    </div>
+    <footer class="bg-dark text-light py-4 mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h5>聯絡資訊</h5>
+            <p><i class="bi bi-envelope"></i> Email: contact@example.com</p>
+            <p><i class="bi bi-telephone"></i> 電話: (02) 2345-6789</p>
+            <p><i class="bi bi-geo-alt"></i> 地址: 台北市信義區信義路五段7號</p>
+          </div>
+          <div class="col-md-6">
+            <h5>關注我們</h5>
+            <div class="social-links">
+              <a href="#" class="text-light me-3"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="text-light me-3"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="text-light me-3"><i class="bi bi-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+        <hr class="mt-4">
+        <div class="text-center">
+          <small>&copy; 2024 JS套件範例說明. All rights reserved.</small>
+        </div>
+      </div>
+    </footer>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script>
+      // 基本位移動畫
+      document.querySelector('#demo1').onclick = function() {
+        anime({
+          targets: '#demo1',
+          translateX: 250,
+          direction: 'alternate',
+          loop: false,
+          easing: 'easeInOutSine',
+          complete: function(anim) {
+            anime.set('#demo1', {translateX: 0});
+          }
+        });
+      };
+
+      // 旋轉動畫 
+      document.querySelector('#demo2').onclick = function() {
+        anime({
+          targets: '#demo2',
+          rotate: '1turn',
+          duration: 2000,
+          loop: false,
+          easing: 'easeInOutQuad',
+          complete: function(anim) {
+            anime.set('#demo2', {rotate: 0});
+          }
+        });
+      };
+
+      // 縮放動畫
+      document.querySelector('#demo3').onclick = function() {
+        anime({
+          targets: '#demo3', 
+          scale: [1, 1.5],
+          duration: 1500,
+          direction: 'alternate',
+          loop: false,
+          easing: 'easeInOutExpo',
+          complete: function(anim) {
+            anime.set('#demo3', {scale: 1});
+          }
+        });
+      };
+
+      // 淡入淡出動畫
+      document.querySelector('#demo4').onclick = function() {
+        anime({
+          targets: '#demo4',
+          opacity: [1, 0],
+          duration: 2000,
+          direction: 'alternate', 
+          loop: false,
+          easing: 'linear',
+          complete: function(anim) {
+            anime.set('#demo4', {opacity: 1});
+          }
+        });
+      };
+
+      // 路徑動畫
+      document.querySelector('#demo5').onclick = function() {
+        anime({
+          targets: '#demo5',
+          translateX: {
+            value: 250,
+            duration: 1000
+          },
+          translateY: {
+            value: 50,
+            duration: 500,
+            delay: 1000
+          },
+          direction: 'alternate',
+          loop: false,
+          complete: function(anim) {
+            anime.set('#demo5', {
+              translateX: 0,
+              translateY: 0
+            });
+          }
+        });
+      };
+
+
+
+    </script>
+</body>
+</html>

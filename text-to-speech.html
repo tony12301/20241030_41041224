@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- 加入 AOS CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="https://i0.wp.com/tw.alphacamp.co/wp-content/uploads/2022/12/60e827295bbd949f8a41a2ec_5d5b7df8da745a6fcc9a7fe1_5b9110e86e11f7d979b0dc36_javascript.png?fit=785%2C340&ssl=1" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+          JS套件範例說明
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="aos.html">AOS動畫</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="text-to-speech.html">文字轉語音</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="lottie.html">Lottie動畫</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="chart.html">chart.js圖表動畫</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="lazy-loading.html">圖片惰性加載</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="anime.html">Anime.js動畫</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="P5.html">P5.js</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="fabric.html">Fabric.js</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="fullcalendar.html">FullCalendar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="lightbox.html">Lightbox2</a>
+            </li>
+          </ul>
+          
+        </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container mt-3">
+      <h1>文字轉語音套件</h1>
+      <p>Web Speech API 是一個能將文字轉換成語音的 JavaScript API，讓網頁具有朗讀功能。訪問 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API" target="_blank">官方網站</a> 了解更多。</p>
+
+      <div class="row mb-5">
+        <div class="col-md-6">
+          <div class="card" data-aos="fade-right">
+            <div class="card-body">
+              <h5 class="card-title">特色介紹</h5>
+              <ul class="list-unstyled">
+                <li>🗣️ 支援多國語言</li>
+                <li>⚙️ 可調整語音速度和音調</li>
+                <li>📱 跨瀏覽器支援</li>
+                <li>🔊 即時語音合成</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card" data-aos="fade-left">
+            <div class="card-body">
+              <h5 class="card-title">使用方式</h5>
+              <p>1. 建立 SpeechSynthesis 實例</p>
+              <p>2. 設定語音參數</p>
+              <p>3. 選擇語音語言</p>
+              <p>4. 呼叫 speak() 方法</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-5">
+        <h2 class="mb-4">程式碼範例</h2>
+        <div class="card" data-aos="fade-up">
+          <div class="card-body">
+            <pre><code>
+// 建立語音合成實例
+const synth = window.speechSynthesis;
+
+// 建立語音設定
+const utterance = new SpeechSynthesisUtterance('要朗讀的文字');
+
+// 基本設定
+utterance.lang = 'zh-TW';     // 設定語言為中文
+utterance.rate = 1.0;         // 設定語速 (0.1-10)
+utterance.pitch = 1.0;        // 設定音調 (0-2)
+utterance.volume = 1.0;       // 設定音量 (0-1)
+
+// 事件處理
+utterance.onstart = () => {   // 開始朗讀時
+  console.log('開始朗讀');
+}
+utterance.onend = () => {     // 結束朗讀時
+  console.log('朗讀結束');
+}
+
+// 開始朗讀
+synth.speak(utterance);       // 執行朗讀
+
+// 停止朗讀
+// synth.cancel();           // 取消朗讀
+            </code></pre>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="mb-4 mt-5">互動示範</h2>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="form-floating mb-3">
+            <textarea class="form-control" id="speechText" style="height: 100px">這是一段測試文字，點擊朗讀按鈕後會開始朗讀。</textarea>
+            <label for="speechText">輸入要朗讀的文字</label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" onclick="speak()">
+              <i class="bi bi-volume-up-fill"></i> 開始朗讀
+            </button>
+            <button class="btn btn-secondary" onclick="stopSpeak()">
+              <i class="bi bi-stop-fill"></i> 停止朗讀
+            </button>
+          </div>
+          <div class="mt-3">
+            <label for="rate" class="form-label">語音速度: <span id="rateValue">1</span></label>
+            <input type="range" class="form-range" id="rate" min="0.5" max="2" step="0.1" value="1" oninput="updateRate(this.value)">
+          </div>
+          <div class="mt-3">
+            <select class="form-select" id="voiceSelect">
+              <option selected>選擇語音</option>
+            </select>
+          </div>
+        </div>
+        
+        <script>
+          // 初始化語音合成
+          const synth = window.speechSynthesis;
+          let utterance = null;
+          
+          // 載入可用的語音
+          function loadVoices() {
+            const voices = synth.getVoices();
+            const voiceSelect = document.getElementById('voiceSelect');
+            voiceSelect.innerHTML = '';
+            
+            voices.forEach((voice, i) => {
+              const option = document.createElement('option');
+              option.textContent = `${voice.name} (${voice.lang})`;
+              option.value = i;
+              voiceSelect.appendChild(option);
+            });
+          }
+          
+          // 當有新的語音可用時重新載入
+          if (speechSynthesis.onvoiceschanged !== undefined) {
+            speechSynthesis.onvoiceschanged = loadVoices;
+          }
+          
+          // 更新語音速度顯示
+          function updateRate(value) {
+            document.getElementById('rateValue').textContent = value;
+          }
+          
+          // 開始朗讀
+          function speak() {
+            // 如果正在朗讀，先停止
+            if (synth.speaking) {
+              synth.cancel();
+            }
+            
+            const text = document.getElementById('speechText').value;
+            utterance = new SpeechSynthesisUtterance(text);
+            
+            // 設定語音
+            const voiceSelect = document.getElementById('voiceSelect');
+            const voices = synth.getVoices();
+            if (voiceSelect.value !== '選擇語音') {
+              utterance.voice = voices[voiceSelect.value];
+            }
+            
+            // 設定速度
+            utterance.rate = document.getElementById('rate').value;
+            
+            synth.speak(utterance);
+          }
+          
+          // 停止朗讀
+          function stopSpeak() {
+            synth.cancel();
+          }
+        </script>
+        
+      </div>
+    </div>
+    <footer class="bg-dark text-light py-4 mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h5>聯絡資訊</h5>
+            <p><i class="bi bi-envelope"></i> Email: contact@example.com</p>
+            <p><i class="bi bi-telephone"></i> 電話: (02) 2345-6789</p>
+            <p><i class="bi bi-geo-alt"></i> 地址: 台北市信義區信義路五段7號</p>
+          </div>
+          <div class="col-md-6">
+            <h5>關注我們</h5>
+            <div class="social-links">
+              <a href="#" class="text-light me-3"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="text-light me-3"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="text-light me-3"><i class="bi bi-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+        <hr class="mt-4">
+        <div class="text-center">
+          <small>&copy; 2024 JS套件範例說明. All rights reserved.</small>
+        </div>
+      </div>
+    </footer>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- 加入 AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+      // 初始化 AOS
+      AOS.init();
+    </script>
+</body>
+</html>

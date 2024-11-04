@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- 加入 AOS CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="https://i0.wp.com/tw.alphacamp.co/wp-content/uploads/2022/12/60e827295bbd949f8a41a2ec_5d5b7df8da745a6fcc9a7fe1_5b9110e86e11f7d979b0dc36_javascript.png?fit=785%2C340&ssl=1" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+          JS套件範例說明
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="aos.html">AOS動畫</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="text-to-speech.html">文字轉語音</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="lottie.html">Lottie動畫</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="chart.html">chart.js圖表動畫</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="lazy-loading.html">圖片惰性加載</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="anime.html">Anime.js動畫</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="P5.html">P5.js</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="fabric.html">Fabric.js</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="fullcalendar.html">FullCalendar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="lightbox.html">Lightbox2</a>
+            </li>
+          </ul>
+          
+        </div>
+      </div>
+    </nav>
+    <div class="container mt-3">
+      <h1>圖片惰性加載套件</h1>
+      <p>圖片惰性加載(Lazy Loading)是一種優化技術,可以延遲載入頁面中不在可視範圍內的圖片,提升網頁載入速度。訪問 <a href="https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading" target="_blank">官方網站</a> 了解更多。</p>
+ 
+
+      <div class="row mb-5">
+        <div class="col-md-6">
+          <div class="card" data-aos="fade-right">
+            <div class="card-body">
+              <h5 class="card-title">特色介紹</h5>
+              <ul class="list-unstyled">
+                <li>🚀 提升頁面載入速度</li>
+                <li>💾 節省頻寬使用</li>
+                <li>📱 支援響應式設計</li>
+                <li>🔄 自動偵測可視範圍</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card" data-aos="fade-left">
+            <div class="card-body">
+              <h5 class="card-title">使用方式</h5>
+              <p>1. 設定圖片的 loading="lazy" 屬性</p>
+              <p>2. 提供圖片尺寸資訊</p>
+              <p>3. 使用佔位圖片</p>
+              <p>4. 監聽載入狀態</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-5">
+        <h2 class="mb-4">程式碼範例</h2>
+        <div class="card" data-aos="fade-up">
+          <div class="card-body">
+            <pre><code>
+// HTML 原生惰性加載
+&lt;img src="image.jpg" 
+     loading="lazy"
+     width="800" 
+     height="600"
+     alt="示範圖片"&gt;
+
+// JavaScript 實作惰性加載
+const images = document.querySelectorAll('img[data-src]');
+
+const loadImage = (image) => {
+  image.setAttribute('src', image.getAttribute('data-src'));
+  image.onload = () => {
+    image.removeAttribute('data-src');
+  };
+};
+
+const imageObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      loadImage(entry.target);
+      imageObserver.unobserve(entry.target);
+    }
+  });
+});
+
+images.forEach(img => imageObserver.observe(img));
+            </code></pre>
+          </div>
+        </div>
+      </div>
+      <h2 class="mb-4 mt-5">互動示範</h2>
+      <h3 class="text-center mb-4 text-primary" style="font-size: 1.5rem; font-weight: bold;">向下滾動頁面，觀察圖片如何在進入可視範圍時才開始載入，達到優化效果，沒看清楚請按F5重新整理</h3>
+      <div class="row">
+        <div class="col-12 mb-5">
+          <div class="card">
+            <img data-src="https://picsum.photos/id/1/1200/400" class="card-img-top lazy" alt="示範圖片 1" width="1200" height="400">
+            <div class="card-body text-center">
+              <h5 class="card-title">第一張示範圖片</h5>
+              <p class="card-text">這張圖片位於頁面上方，應該已經自動載入完成</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 mb-5">
+          <div class="card">
+            <img data-src="https://picsum.photos/id/2/1200/400" class="card-img-top lazy" alt="示範圖片 2" width="1200" height="400">
+            <div class="card-body text-center">
+              <h5 class="card-title">第二張示範圖片</h5>
+              <p class="card-text">繼續往下滾動，這張圖片會在進入視野時才開始載入</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 mb-5">
+          <div class="card">
+            <img data-src="https://picsum.photos/id/3/1200/400" class="card-img-top lazy" alt="示範圖片 3" width="1200" height="400">
+            <div class="card-body text-center">
+              <h5 class="card-title">第三張示範圖片</h5>
+              <p class="card-text">這是最後一張圖片，同樣會在進入視野時才載入，節省頻寬資源</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        // 實作圖片惰性加載
+        document.addEventListener('DOMContentLoaded', function() {
+          const lazyImages = document.querySelectorAll('img.lazy');
+          
+          const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                observer.unobserve(img);
+              }
+            });
+          });
+
+          lazyImages.forEach(img => imageObserver.observe(img));
+        });
+      </script>
+    </div>
+    <footer class="bg-dark text-light py-4 mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h5>聯絡資訊</h5>
+            <p><i class="bi bi-envelope"></i> Email: contact@example.com</p>
+            <p><i class="bi bi-telephone"></i> 電話: (02) 2345-6789</p>
+            <p><i class="bi bi-geo-alt"></i> 地址: 台北市信義區信義路五段7號</p>
+          </div>
+          <div class="col-md-6">
+            <h5>關注我們</h5>
+            <div class="social-links">
+              <a href="#" class="text-light me-3"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="text-light me-3"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="text-light me-3"><i class="bi bi-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+        <hr class="mt-4">
+        <div class="text-center">
+          <small>&copy; 2024 JS套件範例說明. All rights reserved.</small>
+        </div>
+      </div>
+    </footer>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- 加入 AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+      // 初始化 AOS
+      AOS.init();
+    </script>
+</body>
+</html>
